@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+        
+     
+     <bean id="user" class="com.lovo.pojos.User">
+     	<!-- <property name="userName" value="zhangsan"></property>
+     	<property name="password" value="123456"></property> -->	<!-- 手动装配 -->
+     
+     	<constructor-arg index="0" value="zhangsan"></constructor-arg>
+     	<constructor-arg index="1" value="123456"></constructor-arg>	<!-- 手动装配 -->
+     </bean>
+     
+     <bean id="userInfoServiceImpl" class="com.lovo.service.impl.UserInfoServiceImpl" autowire="constructor">
+     	<!-- <property name="dao" ref="userInfoDaoImpl"></property> -->
+     </bean>
+     
+     <bean id="userInfoDaoImpl" class="com.lovo.dao.impl.UserInfoDaoImpl">
+     </bean>
+ </beans>       
